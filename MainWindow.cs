@@ -232,9 +232,7 @@ namespace DS_Starter_Editor
                     comboBox3.Items.AddRange(Gen4Pokemons);
                     FilePath = Path.Combine(FolderPath + "\\overlay", "overlay_0078.bin");
                     //Pt Starter offsets in ovl78
-                    Offset1 = "1BC0";
-                    Offset2 = "1BC4";
-                    Offset3 = "1BC8";
+                    Offset1Int = 7104
 
                     break;
                 case 2:
@@ -243,9 +241,7 @@ namespace DS_Starter_Editor
                     comboBox3.Items.AddRange(Gen4Pokemons);
                     FilePath = Path.Combine(FolderPath, "arm9.bin");
                     //HGSS Starter offsets in the arm9
-                    Offset1 = "108514";
-                    Offset2 = "108518";
-                    Offset3 = "10851C";
+                    Offset1Int = 1082644
 
                     break;
                 case 3:
@@ -263,10 +259,8 @@ namespace DS_Starter_Editor
 
                     break;
             }
-
-            Offset1Int = Convert.ToInt32(Offset1, 16);
-            Offset2Int = Convert.ToInt32(Offset2, 16);
-            Offset3Int = Convert.ToInt32(Offset3, 16);
+                Offset2Int = Offset1Int + 4
+                Offset3Int = Offset2Int + 4
 
            //Read every starter offset and set the corresponding Label to their name 
            if (File.Exists(FilePath)) 
